@@ -1,18 +1,22 @@
 <?php
-/**
- * Desafio:
- * Ler sales.csv e montar um relatorio
- *   de faturamento por bandeira (Payment_Type)
- */
-
-
+ob_start();
 // Localização - l10n *
 // Internacionalização - i18n
 $locale = 'pt_BR';
 //$locale = 'en_US';
 setlocale(LC_ALL, $locale);
 
-$data = file('sales.csv');
+// $data = file('sales.csv');
+//
+// $handler = fopen('aksdja');
+// while(!feof($handler)){
+//   $data = fread($handler, 1024);
+// }
+// fclose($handler);
+$file = file_get_contents('sales.csv');
+$data = explode("\r\n",$file);
+
+
 
 //array_filter($arrayASerFiltrado, $funcaoDeFiltro): array filtrado
 //  $funcaoDeFiltro = function($item){ return (bool) $item(FicaNoArray)? true : false; }
@@ -78,21 +82,25 @@ var_dump($report);
 //Exibindo o relatorio
 $title = 'Relatório de faturamento / bandeira';
 $reportWidth = 40;
+$vd = ob_clean();
 
-//lambda
-$montalinha = function($nome, $valor,$formatarMoeda) use ($reportWidth) {
-    return '|' . str_pad($nome, 15, ' ', STR_PAD_BOTH).
-    '|'. str_pad($formatarMoeda($valor), $reportWidth - 15 - 3, ' ',STR_PAD_LEFT). '|'. PHP_EOL.
-    str_repeat('-', $reportWidth). PHP_EOL;
-};
-echo PHP_EOL, $title, PHP_EOL;
-echo str_repeat('-', $reportWidth), PHP_EOL;// '-' x 40
-echo '|', str_pad(strtoupper('Bandeira'), 15, ' ', STR_PAD_BOTH);
-echo '|', str_pad(strtoupper('Faturamento'), $reportWidth - 15 - 3, ' ', STR_PAD_BOTH), '|', PHP_EOL;
-echo str_repeat('-', $reportWidth), PHP_EOL;
-$total = 0;
+//Em HTML
+$title = 'Relatório de faturamento / bandeira';
+$reportWidth = 40;
+echo '<html><head><title></title></head><meta charset="utf-8"/>';
+echo '<body>';
+echo '<table>';
+echo PHP_EOL, "<caption>$title</caption>", PHP_EOL;
+echo '<tr>', PHP_EOL;
+echo "<th>Bandeira</th><th>Faturamento</th>", PHP_EOL;
+echo '</tr>', PHP_EOL;
 foreach ($report as $bandeira => $valor) {
-    echo $montalinha($bandeira, $valor, $formatar[$locale]);
-    $total += $valor;
+    echo '<tr>', PHP_EOL;
+    echo "<td>$bandeira</td>";
+    echo "<td>".$formatar[$locale]($valor)."</td>", PHP_EOL;
+    echo '</tr>', PHP_EOL;
 }
-echo $montalinha('TOTAL', $total, $formatar[$locale]);
+echo '</table></body></html>';
+$html = ob_get_contents();
+ob_end_clean();
+file_put_contents('report.html',$html);
