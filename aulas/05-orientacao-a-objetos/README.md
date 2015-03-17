@@ -7,10 +7,6 @@
 > código, além de permitir que estruturas mais complexas possam ser usadas como entidades dos programas, 
 > melhorando, e muito, a comunicação entre as entidades computacionais.
 
- * alksjdlasa
- * asdjasldlkasd
- * asjkdhkajsd
-   * akldajdkla
-   * a;lsq;alkdad
-   
 [Site do Instrutor](http://duodra.co)
+
+@duodraco
