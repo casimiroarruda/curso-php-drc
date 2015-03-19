@@ -1,5 +1,6 @@
 <?php
 error_reporting(E_ALL);
+
 /**
  * Nova classe
  */
@@ -115,19 +116,19 @@ class Cachorro
     }
 
 
-
-
     /**
      * ações
      * métodos/method
      */
 
 
-    public function setNome($nome){
+    public function setNome($nome)
+    {
         $this->nome = $nome;
     }
 
-    public function getNome(){
+    public function getNome()
+    {
         return $this->nome;
     }
 
@@ -143,9 +144,9 @@ class Cachorro
      */
     public function latir(Cachorro $paraQuem)
     {
-        $acao = $this->nome. " está latindo para ". $paraQuem->nome.PHP_EOL;
-        if($paraQuem->ferocidade >= 3){
-            $acao .= $paraQuem->nome. ' latiu de volta'.PHP_EOL;
+        $acao = $this->nome . " está latindo para " . $paraQuem->nome . PHP_EOL;
+        if ($paraQuem->ferocidade >= 3) {
+            $acao .= $paraQuem->nome . ' latiu de volta' . PHP_EOL;
         }
         return $acao;
     }
@@ -171,11 +172,13 @@ class Cachorro
     }
 }
 
-class CaoDeGuarda extends Cachorro{
-    function latir(Cachorro $paraQuem){
+class CaoDeGuarda extends Cachorro
+{
+    function latir(Cachorro $paraQuem)
+    {
         //sem efeito pois está private na classe pai
         //$this->ferocidade = 5;
-        return $this->nome.' está rosnando'.PHP_EOL;
+        return $this->nome . ' está rosnando' . PHP_EOL;
     }
 
 }
@@ -189,7 +192,7 @@ $Max->setNome('Max');
 $Max->setFerocidade(0);
 
 $Blaze->setNome('Blaze');
-$Blaze->setFerocidade( 5);
+$Blaze->setFerocidade(5);
 
 $Puppy->setNome('Puppy');
 
