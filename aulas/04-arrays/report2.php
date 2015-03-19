@@ -96,3 +96,5 @@ foreach ($report as $bandeira => $valor) {
     $total += $valor;
 }
 echo $montalinha('TOTAL', $total, $formatar[$locale]);
+
+// http://stackoverflow.com/questions/10715658/getting-fatal-error-in-money-format-function

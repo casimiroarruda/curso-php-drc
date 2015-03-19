@@ -72,3 +72,6 @@ class Cachorro {
 $Max = new Cachorro;
 $Blaze = new Cachorro;
 ```
+
+
+> Ler: Martin Fowler
