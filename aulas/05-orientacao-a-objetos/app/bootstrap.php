@@ -30,7 +30,7 @@ switch (php_sapi_name()) {
 
 $moneyClass = $tmpCurrency ?:'Money_Dollar';
 try{
-    $reflector = new ReflectionClass('d'.$moneyClass);
+    $reflector = new ReflectionClass($moneyClass);
 } catch (Exception $e){
     echo "O sistema gerou um erro: [".$e->getCode()."] ".$e->getMessage(),PHP_EOL;
     exit;
