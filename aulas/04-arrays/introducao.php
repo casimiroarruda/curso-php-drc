@@ -1,4 +1,5 @@
 <?php
+<<<<<<< Updated upstream
 $array = array(1,2,3);
 $array = [
     'A',//0
@@ -45,3 +46,32 @@ $array4 = [
 ];
 print_r($array4);
 echo $array4['c'][1],PHP_EOL;
+=======
+$array = array();
+$arrayNova = [
+    'A',
+    'B',
+    'C'
+];
+
+echo $arrayNova[2], PHP_EOL;
+
+$arrayNova[] = 'D';
+
+echo $arrayNova[count($arrayNova)-1],PHP_EOL;
+$array2 =[
+    33=> 'Fulano',
+    88 => 'Ciclano',
+    71 => 'Beltrano'
+];
+
+$array3 = [
+    'arroz' => 2.69,
+    'feijao'=> 7.68,
+    'leite'=> 1.99
+];
+
+var_dump($arrayNova);
+var_dump($array2);
+var_dump($array3);
+>>>>>>> Stashed changes
