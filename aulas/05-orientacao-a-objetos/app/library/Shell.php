@@ -1,6 +1,6 @@
 <?php
 
-class Shell implements Printable
+class Shell extends Output implements Printable
 {
     protected $title = 'Relatório de faturamento / bandeira';
     protected $reportWidth = 40;
