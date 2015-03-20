@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Class DataProcessor
  *
@@ -63,10 +64,18 @@ class DataProcessor
         $data = array_filter($data, [$this, 'eliminaErradas']);
         $report = [];
         foreach ($data as $celulasLimpas) {
-            $celulaEstruturada = array_combine($columnNames, $celulasLimpas);
-            $report[$celulaEstruturada['payment_type']] += $celulaEstruturada['price'];
+            $this->adicionarAoRelatorio($report, $celulasLimpas, $columnNames);
         }
         return array_filter($report);
+    }
+
+    protected function adicionarAoRelatorio(array &$report, $linhaASerProcessada, &$columnNames)
+    {
+        $celulaEstruturada = array_combine($columnNames, $linhaASerProcessada);
+        if (!isset($report[$celulaEstruturada['payment_type']])) {
+            $report[$celulaEstruturada['payment_type']] = 0;
+        }
+        $report[$celulaEstruturada['payment_type']] += $celulaEstruturada['price'];
     }
 
 }
