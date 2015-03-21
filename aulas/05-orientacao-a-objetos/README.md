@@ -83,3 +83,4 @@ $Blaze = new Cachorro;
 2. Criação de novos Tipos
 3. Melhorar o Desenvolvimento e a Manutenção
 4. Facilitar o entendimento e comunicação entre as diversas entidades.
+5. Reusabilidade

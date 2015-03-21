@@ -2,17 +2,14 @@
 namespace DRC\Report\Service\Output;
 
 use DRC\Report\Interaction\DataProcessor;
+use DRC\Report\Service\String\UnicodeHandling as mb;
 
 class Shell extends Output implements Printable
 {
     protected $title = 'Relatório de faturamento / bandeira';
     protected $reportWidth = 40;
 
-    protected function strPad($input, $pad_length, $pad_string, $pad_style, $encoding = "UTF-8")
-    {
-        return str_pad($input,
-            strlen($input) - mb_strlen($input, $encoding) + $pad_length, $pad_string, $pad_style);
-    }
+    use mb;
 
     protected function montaLinha($nome, $valor, $formatarMoeda)
     {
@@ -21,9 +18,9 @@ class Shell extends Output implements Printable
         str_repeat('-', $this->reportWidth) . PHP_EOL;
     }
 
-
-    public function mostraMukeka(DataProcessor $dataProcessor){
-        $report = $dataProcessor->processa();
+    public function show(DataProcessor $processor)
+    {
+        $report = $processor->processa();
 
         $output = PHP_EOL . $this->title . PHP_EOL;
         $output .= str_repeat('-', $this->reportWidth) . PHP_EOL;
@@ -37,11 +34,6 @@ class Shell extends Output implements Printable
         }
         $output .= $this->montalinha('TOTAL', $total, [$this->report->getCurrency(), 'convert']);
         return $output;
-    }
-
-    public function show(DataProcessor $processor)
-    {
-        return $this->mostraMukeka($processor);
     }
 
 }

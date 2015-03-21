@@ -41,3 +41,17 @@ class User
 * 5 WebServices (REST) + Autenticacao
 * 6 Projeto
 
+
+
+class Casa
+
+class CasaComAquecimento extends Casa
+ use Gas
+
+
+class Carro
+
+class CarroTetraFuel extends Carro
+ use Gas
+ 
+trait Gas
