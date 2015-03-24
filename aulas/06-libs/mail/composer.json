@@ -1,0 +1,13 @@
+{
+    "name": "drc-php/mail",
+    "require": {
+        "swiftmailer/swiftmailer": "@stable"
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Anderson Casimiro",
+            "email": "duodraco@gmail.com"
+        }
+    ]
+}

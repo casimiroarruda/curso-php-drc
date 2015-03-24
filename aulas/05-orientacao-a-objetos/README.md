@@ -75,3 +75,12 @@ $Blaze = new Cachorro;
 
 
 > Ler: Martin Fowler
+
+
+## Por que Orientação a Objetos?
+
+1. Usar elementos do mundo real no mundo lógico
+2. Criação de novos Tipos
+3. Melhorar o Desenvolvimento e a Manutenção
+4. Facilitar o entendimento e comunicação entre as diversas entidades.
+5. Reusabilidade

@@ -1,0 +1,54 @@
+<html>
+<head><title>Teste galeria</title></head>
+<body>
+    <fieldset>
+        <legend id="acttitle"></legend>
+        <img src="" id="actimg"/>
+    </fieldset>
+    <button id="previousbtn">&laquo;</button>
+    <button id="nextbtn">&raquo;</button>
+<script>
+    var galeria = {
+        data:[
+            {
+                img:"img1.png",
+                title:"titulo 1"
+            },
+            {
+                img:"img2.jpg",
+                title:"titulo 2"
+            },
+            {
+                img:"img3.jpg",
+                title:"titulo 3"
+            }
+        ],
+        index:0,
+        next:function(){
+            galeria.index = galeria.index +1;
+            if(galeria.data[galeria.index] == undefined){
+                galeria.index = 0;
+            }
+            galeria.refresh();
+        },
+        previous:function(){
+            galeria.index = galeria.index - 1;
+            if(galeria.data[galeria.index] == undefined){
+                galeria.index = galeria.data.length - 1;
+            }
+            galeria.refresh();
+        },
+        refresh:function(){
+            document.getElementById('acttitle').innerHTML = galeria.data[galeria.index].title;
+            document.getElementById('actimg').src = galeria.data[galeria.index].img;
+        },
+        __construct:function(){
+            document.getElementById('previousbtn').onclick = galeria.previous;
+            document.getElementById('nextbtn').onclick = galeria.next;
+            galeria.refresh();
+        }
+    };
+    galeria.__construct();
+</script>
+</body>
+</html>
