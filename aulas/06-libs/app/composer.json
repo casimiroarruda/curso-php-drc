@@ -1,0 +1,32 @@
+{
+  "name": "drc/report",
+  "description": "Report Sample for classes",
+  "require": {
+    "php": ">=5.4.0",
+    "ext-mysql": "*",
+    "monolog/monolog": "@stable",
+    "drakojn/io": "0.2.0",
+    "moltin/currency": "1.0.*@dev",
+    "pimple/pimple": "~3.0"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anderson Casimiro",
+      "email": "duodraco@gmail.com"
+    },
+    {
+      "name": "Ricardo Cardoso",
+      "email": "ricardo@ricardocardoso.net"
+    },
+    {
+      "name": "Bruno Pupp",
+      "email": "brunopupp@globo.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DRC\\": "application/library/DRC/"
+    }
+  }
+}
