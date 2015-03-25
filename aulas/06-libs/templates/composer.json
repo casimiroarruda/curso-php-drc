@@ -1,0 +1,15 @@
+{
+  "name": "drc/template",
+  "description": "",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "author's name",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "twig/twig": "1.6.5"
+  }
+}
