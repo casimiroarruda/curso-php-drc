@@ -65,16 +65,16 @@ function addCrimeToSummary($crime, &$summary)
  * Adiciona um crime a um dia da semana no Resumo
  * @param string $crime
  * @param string $dateString
- * @param array $summary
+ * @param array $xpto
  * @internal param string $date
  */
-function addCrimeFromWeekDayToSummary($crime, $dateString, & $summary)
+function addCrimeFromWeekDayToSummary($crime, $dateString, & $xpto)
 {
     $weekDay = getWeekDayByDate($dateString);
-    if (!isset($summary[$weekDay][$crime])) {
-        $summary[$weekDay][$crime] = 0;
+    if (!isset($xpto[$weekDay][$crime])) {
+        $xpto[$weekDay][$crime] = 0;
     }
-    $summary[$weekDay][$crime]++;
+    $xpto[$weekDay][$crime]++;
 }
 
 /**
