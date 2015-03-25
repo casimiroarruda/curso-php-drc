@@ -4,7 +4,7 @@ require __DIR__."/../vendor/autoload.php";
 $loader = new Twig_Loader_Filesystem(__DIR__."/templates");
 //configuro e instancio o twig de fato
 $twig = new Twig_Environment($loader, [
-    'cache' => '/tmp/',
+    'cache' => false,
 ]);
 
 //configuro variaveis/atributos
