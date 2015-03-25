@@ -1,0 +1,14 @@
+{% extends "skeleton.twig" %}
+{% block title2 %}{{ parent() }} - TMNT{% endblock %}
+{% block body %}
+<fieldset>
+    <legend>{{ title }} - TMNT</legend>
+    {% if turtles|length > 0 %}
+    <ul>
+        {% for turtle in turtles %}
+                <li><strong>{{ turtle.name }}</strong> uses <em>{{ turtle.weapon }}</em></li>
+            {% endfor %}
+        </ul>
+    {% endif %}
+</fieldset>
+{% endblock %}
