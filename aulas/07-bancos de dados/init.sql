@@ -1,0 +1,12 @@
+CREATE DATABASE report;
+
+GRANT ALL PRIVILEGES ON report.* TO 'web_user'@'localhost' IDENTIFIED BY 'xurumelas';
+
+FLUSH PRIVILEGES;
+
+CREATE TABLE line
+(
+  id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+  payment_type VARCHAR(50),
+  amount DOUBLE(10,2)
+);
