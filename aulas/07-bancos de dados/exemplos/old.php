@@ -14,9 +14,10 @@ $data = array(
     $sql = "INSERT INTO line (payment_type,amount) VALUES ('$paymentType',$value)";
     $x = mysql_query($sql,$conn);
 }*/
-
-$qry = mysql_query("SELECT * FROM line");
+$paymentTypeDefault = 'Diners';
+$qry = mysql_query("SELECT * FROM line WHERE payment_type = '{$paymentTypeDefault}'");
 while($obj = mysql_fetch_object($qry)){
     echo "{$obj->id}, {$obj->payment_type}: USD {$obj->amount}",PHP_EOL;
 }
 mysql_close($conn);
+
