@@ -12,7 +12,7 @@ CREATE TABLE line
   payment_type VARCHAR(50),
   amount DOUBLE(10,2)
 );
-
+/* exemplos
 INSERT INTO <tabela> (<coluna1>,<coluna2>[,<...>]) VALUES (<valor1>,<valor2>[,<...>]);
 
 SELECT <coluna1>, <coluna2> as <apelido>[, <...>]
@@ -31,3 +31,4 @@ id = 1 AND name = 'josefina'
 id = 1 OR name = 'josefina'
 aniversario BETWEEN <data1> AND <data2>
 ...
+*/

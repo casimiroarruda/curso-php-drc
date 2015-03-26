@@ -1,0 +1,28 @@
+{
+  "name": "drc/report-db-from-csv",
+  "description": "Report Sample for classes",
+  "require": {
+    "php": ">=5.4.0",
+    "ext-pdo_mysql": "*"
+  },
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Anderson Casimiro",
+      "email": "duodraco@gmail.com"
+    },
+    {
+      "name": "Ricardo Cardoso",
+      "email": "ricardo@ricardocardoso.net"
+    },
+    {
+      "name": "Bruno Pupp",
+      "email": "brunopupp@globo.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "DRC\\": "app/library/DRC/"
+    }
+  }
+}
