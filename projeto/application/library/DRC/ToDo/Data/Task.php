@@ -1,6 +1,11 @@
 <?php
 namespace DRC\ToDo\Data;
 
+/**
+ * Definição de dados de uma Tarefa
+ * atributos "refletem" as colunas do BD
+ * @package DRC\ToDo\Data
+ */
 class Task implements \JsonSerializable
 {
     protected $id;

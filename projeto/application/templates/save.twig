@@ -1,0 +1,20 @@
+{% extends 'base.twig' %}
+{% block body %}
+    <fieldset>
+        <legend>Editar Tarefa #{{ task.getId() }}</legend>
+        <form action="/api/task" method="post">
+            <input type="hidden" id="id" name="id" value="{{ task.getId() }}" />
+            <dl>
+                <dt>Títutlo</dt>
+                <dd><input type="text" name="title" value="{{ task.getTitle() }}"/></dd>
+            </dl>
+            <dl>
+                <dt>Descrição</dt>
+                <dd><textarea name="description">{{ task.getDescription() }}</textarea></dd>
+            </dl>
+            <hr/>
+            <button type="submit">Salvar</button>
+            <a href="/">Cancelar</a>
+        </form>
+    </fieldset>
+{% endblock %}

@@ -1,12 +1,15 @@
 {% extends 'base.twig' %}
 {% block body%}
-
     <a href="/new">Nova Tarefa</a>
     <ul>
         {% for task in tasks %}
         <li>
-            <button>&#10004;</button>
+            {% if task.getStatus() %}
+            <button onclick="document.location.href='/api/task/{{ task.getId() }}/done'">&#10004;</button>
             <a href="/edit/{{ task.getId() }}">{{ task.getTitle() }}</a>
+            {% else %}
+                <span class="done">{{ task.getTitle() }}</span>
+            {% endif %}
         </li>
         {% endfor %}
     </ul>

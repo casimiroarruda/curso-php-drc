@@ -2,7 +2,17 @@
 <html>
 <head><title>{{ title }}</title></head>
 <meta charset="UTF-8"/>
-
+<style>
+    ul{
+        list-style: none;
+    }
+    .done {
+        text-decoration: line-through;
+        color:#999;
+        display: inline-block;
+        margin-left: 30px;
+    }
+</style>
 <body>
 <h1>{{ title }}</h1>
 {% endblock %}
