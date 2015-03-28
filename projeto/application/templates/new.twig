@@ -1,0 +1,20 @@
+{% extends 'base.twig' %}
+{% block body %}
+    <fieldset>
+        <legend>Nova Tarefa</legend>
+        <form action="/api/task" method="post">
+            <input type="hidden" id="_method" name="_method" value="PUT" />
+            <dl>
+                <dt>Títutlo</dt>
+                <dd><input type="text" name="title"/></dd>
+            </dl>
+            <dl>
+                <dt>Descrição</dt>
+                <dd><textarea name="description"></textarea></dd>
+            </dl>
+            <hr/>
+            <button type="submit">Salvar</button>
+            <a href="/">Cancelar</a>
+        </form>
+    </fieldset>
+{% endblock %}
