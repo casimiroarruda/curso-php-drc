@@ -1,0 +1,9 @@
+CREATE TABLE task
+(
+    id INT UNSIGNED PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    title VARCHAR(100) NOT NULL,
+    description LONGTEXT NOT NULL,
+    status TINYINT NOT NULL,
+    creation_date DATETIME NOT NULL,
+    last_modified DATETIME NOT NULL
+);

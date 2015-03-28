@@ -1,0 +1,25 @@
+{
+  "name": "duodraco/sample-php-skeleton",
+  "description": "base app skeleton for web projects",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "type": "project",
+  "authors": [
+    {
+      "name": "Anderson 'Duodraco' Casimiro",
+      "email": "email@example.com"
+    }
+  ],
+  "require": {
+    "php":">5.4.0",
+    "ext-pdo_mysql":"*",
+    "swiftmailer/swiftmailer": "5.4.*",
+    "silex/silex": "@stable",
+    "twig/twig": "@stable"
+  },
+  "autoload": {
+    "psr-4": {
+      "DRC\\":"application/library/DRC"
+    }
+  }
+}

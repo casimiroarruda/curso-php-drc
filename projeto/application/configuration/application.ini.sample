@@ -1,0 +1,4 @@
+[db]
+dsn='mysql:host=localhost;dbname=report'
+username=abdao
+password=chimichanga
